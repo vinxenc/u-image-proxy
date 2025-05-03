@@ -7,7 +7,7 @@ on:
   #   branches: [ main ] # Run on pushes to the main branch
   pull_request:
 
-    branches: [ main, develop ] # Run on pull requests targeting the main branch
+    branches: [ master, develop ] # Run on pull requests targeting the main branch
 
 jobs:
   build-and-test:
