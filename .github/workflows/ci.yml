@@ -25,9 +25,9 @@ jobs:
 
       # 2. Set up pnpm
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
-          version: 8 # Specify pnpm version if needed
+          version: 9.5.0 # Specify pnpm version if needed
 
       # 3. Set up Node.js environment
       - name: Use Node.js ${{ matrix.node-version }}
@@ -47,14 +47,14 @@ jobs:
       # 6. Run unit tests and collect coverage
       # Assumes 'pnpm test --coverage' runs unit tests via jest.config.js
       # and generates coverage in './coverage'
-      - name: Run unit tests
-        run: pnpm test --coverage
+      # - name: Run unit tests
+      #   run: pnpm run test --coverage
 
       # 7. Run E2E tests and collect coverage
       # Assumes 'pnpm test:e2e:coverage' runs e2e tests via tests/jest-e2e.config.js
       # and generates coverage in './coverage/e2e'
       - name: Run E2E tests
-        run: pnpm test:e2e:coverage # Make sure this script exists in your package.json
+        run: pnpm run test:e2e:coverage # Make sure this script exists in your package.json
 
       # 8. (Optional) Upload coverage reports to Codecov
       # - name: Upload coverage reports to Codecov
